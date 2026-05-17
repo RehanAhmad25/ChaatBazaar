@@ -492,6 +492,12 @@ function addToCart(id) {
   updateCartCount();
   renderCart();
   saveCart();
+
+  // Slide open the cart sidebar automatically for a premium UX when adding items on index.html
+  if (cartSidebar) {
+    cartSidebar.setAttribute("aria-hidden", "false");
+    cartSidebar.style.transform = "translateX(0)";
+  }
 }
 
 function removeFromCart(id) {
