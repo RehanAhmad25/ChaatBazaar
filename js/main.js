@@ -818,6 +818,49 @@ function setupNewsletterForm() {
   });
 }
 
+function setupActiveNavbar() {
+  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll("section");
+
+  // Click active state
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.forEach(nav => nav.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+
+  // Scroll active state
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 120;
+      const sectionHeight = section.clientHeight;
+
+      if (
+        window.scrollY >= sectionTop &&
+        window.scrollY < sectionTop + sectionHeight
+      ) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+
+      const href = link.getAttribute("href");
+
+      if (
+        href === `#${current}` ||
+        (current === "specials" && href === "#menu")
+      ) {
+        link.classList.add("active");
+      }
+    });
+  });
+}
+
 // ===== Initialization =====
 
 async function init() {
@@ -830,6 +873,7 @@ async function init() {
   setupAdvancedFilters();
   setupContactForm();
   setupNewsletterForm();
+  setupActiveNavbar();
 
   if (checkoutBtn) {
     checkoutBtn.addEventListener("click", () => {
