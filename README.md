@@ -173,7 +173,7 @@ Follow these steps to contribute your changes to **ChaatBazaar**:
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=4&color=FF7B54" width="100%">
 
-### 💖 Contributors
+## 💖 Contributors
 
 Thanks to all the amazing people who contribute to **ChaatBazaar** 🚀
 
@@ -185,7 +185,7 @@ Thanks to all the amazing people who contribute to **ChaatBazaar** 🚀
 
 <br>
 
-### ⭐ Project Support
+## ⭐ Project Support
 
 <p align="center">
   <a href="https://github.com/PatelHarsh2006/ChaatBazaar/stargazers">
